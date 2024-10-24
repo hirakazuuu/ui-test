@@ -13,30 +13,36 @@ describe('HelloWorld', () => {
   });
 
   it('h1タグのテキストがpropsの値であることをテストしよう', () => {
-    expect(wrapper.find("h1").text()).toEqual('Hello Vitest')
+    // ここにテストコードを追加
+
   })
 
   it("aタグのhrefがhttps://vite.dev/であることをテストしよう", () => {
-    expect(wrapper.find("a").attributes("href")).toEqual("https://vite.dev/")
+    // ここにテストコードを追加
+
   })
 
   it("Incrementボタンをクリックすると表示されているcountが1増えることをテストしよう",async () => {
     expect(wrapper.find("p").text()).toEqual("0")
-    await wrapper.findAll("button")[0].trigger("click")
+    // ここにテストコードを追加
+
     expect(wrapper.find("p").text()).toEqual("1")
   })
 
   it("Decrementボタンをクリックするとcountが1減ることをテストしよう",async () => {
     expect(wrapper.find("p").text()).toEqual("0")
-    await wrapper.findAll("button")[1].trigger("click")
+    // ここにテストコードを追加
+
     expect(wrapper.find("p").text()).toEqual("-1")
   })
 
   it("CustomComponentが表示されていることをテストしよう",()=>{
-    expect(wrapper.findComponent(CustomComponent).exists()).toBeTruthy()
+    // ここにテストコードを追加
+
   })
 
   it("CustomComponentWithPropsがmsgのpropsに「hoge」を渡して表示されていることをテストしよう", () =>{
-    expect(wrapper.findComponent(CustomComponentWithProps).props("msg")).toEqual("hoge")
+    // ここにテストコードを追加
+
   })
 })
