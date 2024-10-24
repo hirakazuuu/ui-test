@@ -1,7 +1,18 @@
 <script setup lang="ts">
+import { defineProps, ref } from 'vue'
+import CustomComponent from './CustomComponent.vue'
+import CustomComponentWithProps from './CustomComponentWithProps.vue'
+
 defineProps<{
   msg: string
 }>()
+const count = ref(0)
+const increment = () => {
+  count.value++
+}
+const decrement = () => {
+  count.value--
+}
 </script>
 
 <template>
@@ -9,9 +20,13 @@ defineProps<{
     <h1 class="green">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with
-      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      <a href="https://vite.dev/" target="_blank" rel="noopener">Vite</a>
     </h3>
+    <button @click="increment">Increment</button>
+    <button @click="decrement">Decrement</button>
+    <p>{{ count }}</p>
+    <CustomComponent />
+    <CustomComponentWithProps msg="hoge" />
   </div>
 </template>
 
